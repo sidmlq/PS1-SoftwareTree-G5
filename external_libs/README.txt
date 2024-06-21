@@ -1,0 +1,1 @@
+This directory provides some JDBC drivers (SQLite, MySQL, etc.) and their licesing terms for your convenience. You may use them if they are suitable for your particular database.  
