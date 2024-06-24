@@ -5,7 +5,7 @@
 // DBURL=jdbc:mysql://localhost:3306/test, Database=MySQL, Version: 8.0.37
 // Date: Mon Jun 17 18:12:42 IST 2024
 // 
-package com.softwaretree.jdxmysqlsakilaexample.reversed.json.model;
+package com.softwaretree;
 
 import org.json.JSONException;
 import org.json.JSONObject;
