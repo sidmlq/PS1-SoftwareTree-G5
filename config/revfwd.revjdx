@@ -4,7 +4,7 @@ REM JDX is a product of Software Tree, LLC.
 REM Date: Mon Jun 17 18:12:42 IST 2024
 REM
 
-JDX_DATABASE JDX:jdbc:mysql://localhost:3306/test2?useSSL=false&allowPublicKeyRetrieval=true;USER=root;PASSWORD=sql;JDX_DBTYPE=MYSQL;DEBUG_LEVEL=3
+JDX_DATABASE JDX:jdbc:mysql://host.docker.internal:3306/test2?useSSL=false;allowPublicKeyRetrieval=true;USER=root;PASSWORD=sql;JDX_DBTYPE=MYSQL;DEBUG_LEVEL=3
 JDBC_DRIVER com.mysql.jdbc.Driver
 JDX_OBJECT_MODEL_PACKAGE com.softwaretree.jdxmysqlsakilaexample.reversed.json.model
 JDX_SUPERCLASS_NAME com.softwaretree.jdx.JDX_JSONObject
