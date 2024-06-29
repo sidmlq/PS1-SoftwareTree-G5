@@ -1,1 +1,1 @@
-{"Dept": "com.softwaretree.Dept", "Emp": "com.softwaretree.Emp"}
+{"Dept": "com.mycompany.gilhari5.Dept", "Emp": "com.mycompany.gilhari5.Emp"}
