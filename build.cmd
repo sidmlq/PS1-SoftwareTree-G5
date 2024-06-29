@@ -1,2 +1,2 @@
-docker build -t revfwd:1.0 .
+docker build -t gilhari5_mysql:1.1 .
 docker images
