@@ -1,0 +1,68 @@
+REM A script to insert 50 Employee JSON objects into a running container image 
+REM of the app-specific Gilhari microservice gilhari5_mysql_populate_local:1.0.
+REM
+REM The responses are recorded in a log file (curl.log).
+REM
+REM This script assumes the default port number is 80, but you can 
+REM specify a different port number as the first command line argument.
+REM Example: curlCommands 8899
+
+IF %1.==. GOTO DefaultPort
+SET port=%1
+GOTO Proceed
+
+:DefaultPort
+SET port=80
+GOTO Proceed
+
+:Proceed
+
+echo ** BEGIN OUTPUT ** > curl.log
+echo. >> curl.log
+
+echo Using PORT number %port% >> curl.log
+echo. >> curl.log
+
+REM Define the base first and last names
+SET first_names[0]=Manas
+SET first_names[1]=Ashmitta
+SET first_names[2]=Simran
+SET first_names[3]=Siddharth
+SET first_names[4]=Damodar
+
+SET last_names[0]=Tomar
+SET last_names[1]=Dutta
+SET last_names[2]=Rao
+SET last_names[3]=Sharma
+SET last_names[4]=Periwal
+
+echo ** Inserting 50 Employee objects ** >> curl.log
+
+FOR /L %i IN (1,1,50) DO (
+    SET /A idx=%i
+    SET /A name_idx=(%i - 1) % 5
+    SET /A department_id=(%i % 5) + 1
+    SET hire_date=381484800000+(%i * 2000)
+    SET /A salary=54000 + %i
+
+    SET first_name=!first_names[!name_idx!]!%i
+    SET last_name=!last_names[!name_idx!]!%i
+
+    echo Inserting Employee with ID: !idx!, First Name: !first_name!, Last Name: !last_name!, Department ID: !department_id!, Salary: !salary! >> curl.log
+
+    curl -X POST "http://localhost:%port%/gilhari/v1/Employee" ^
+         -H "Content-Type: application/json" ^
+         -d "{""entity"":{""id"":!idx!,""first_name"":""!first_name!"",""last_name"":""!last_name!"",""hire_date"":!hire_date!,""salary"":!salary!,""department_id"":!department_id!}}" >> curl.log
+    echo. >> curl.log
+    echo. >> curl.log
+)
+
+echo ** Query all Employee objects ** >> curl.log
+curl -X GET "http://localhost:%port%/gilhari/v1/Employee" -H "Content-Type: application/json" >> curl.log
+echo. >> curl.log
+echo. >> curl.log
+
+echo ** END OUTPUT ** >> curl.log
+echo. >> curl.log
+
+type curl.log

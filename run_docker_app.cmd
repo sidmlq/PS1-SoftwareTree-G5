@@ -1,1 +1,1 @@
-docker run  -p 80:8081 gilhari5_mysql:1.1
+docker run  -p 80:8081 gilhari5_mysql_populate_local:1.0

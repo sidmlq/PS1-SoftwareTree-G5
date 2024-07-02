@@ -15,7 +15,7 @@ CLASS com.mycompany.gilhari5.Emp TABLE employees
     VIRTUAL_ATTRIB last_name ATTRIB_TYPE java.lang.String
     VIRTUAL_ATTRIB first_name ATTRIB_TYPE java.lang.String
     VIRTUAL_ATTRIB hire_date ATTRIB_TYPE java.util.Date
-    VIRTUAL_ATTRIB salary ATTRIB_TYPE java.math.BigDecimal
+    VIRTUAL_ATTRIB salary ATTRIB_TYPE java.lang.Long
     VIRTUAL_ATTRIB department_id ATTRIB_TYPE java.lang.Integer
     VIRTUAL_ATTRIB id ATTRIB_TYPE int
     PRIMARY_KEY id 
