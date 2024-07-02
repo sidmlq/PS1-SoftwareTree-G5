@@ -9,7 +9,7 @@ WORKDIR /opt/revfwd
 
 ADD bin ./bin
 ADD config ./config
-ADD revfwd.config .
+ADD gilhari5_mysql_local.config .
 
 EXPOSE 8081 
-CMD node /node/node_modules/gilhari_rest_server/gilhari_rest_server.js revfwd.config
+CMD node /node/node_modules/gilhari_rest_server/gilhari_rest_server.js gilhari5_mysql_local.config
