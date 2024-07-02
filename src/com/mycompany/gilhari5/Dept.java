@@ -12,7 +12,7 @@ import org.json.JSONObject;
 
 import com.mycompany.gilhari5.Emp;
 
-import com.softwaretree.jdx.JDX_JSONObject;
+import com.mycompany.gilhari5.jdx.JDX_JSONObject;
 
 public class Dept extends JDX_JSONObject {
     public  Emp[]  listEmp;

@@ -10,7 +10,7 @@ package com.mycompany.gilhari5;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.softwaretree.jdx.JDX_JSONObject;
+import com.mycompany.gilhari5.jdx.JDX_JSONObject;
 
 public class Emp extends JDX_JSONObject {
 
